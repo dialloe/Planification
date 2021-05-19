@@ -1,0 +1,53 @@
+<ion-content>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>professeur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<div id="container">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-md="6" offset-md="3">
+        <form [formGroup]="professeur" (ngSubmit)="saveProf()">
+          <ion-item>
+            <ion-label>Nom</ion-label>
+            <ion-input type="text" formControlName="nom" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Prenom</ion-label>
+            <ion-input type="text" formControlName="prenom" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Nom usuel</ion-label>
+            <ion-input type="text" formControlName="nomUsuel" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Telephone</ion-label>
+            <ion-input type="text" formControlName="telephone" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="email" formControlName="email" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Adresse</ion-label>
+            <ion-input type="text" formControlName="adresse"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Ville</ion-label>
+            <ion-input type="text" formControlName="ville" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Pays</ion-label>
+            <ion-input type="text" formControlName="pays"></ion-input>
+          </ion-item>
+         
+          <ion-button type="submit" color="primary"  [disabled]="!professeur.valid" block>Add Todo</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </div>
+</ion-content>

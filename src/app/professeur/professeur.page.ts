@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder} from '@angular/forms';
+import { ProfesseurService } from './professeur.service';
+import {Professeur} from './professeur';
 @Component({
   selector: 'app-professeur',
   templateUrl: './professeur.page.html',
@@ -18,7 +20,10 @@ export class ProfesseurPage implements OnInit {
     pays: ['']
   });
 
-  constructor( private formBuilder: FormBuilder ) {
+  listProfesseurs : Professeur[];
+
+  constructor( private formBuilder: FormBuilder,
+                public professeurService : ProfesseurService ) {
    
   }
 
@@ -26,7 +31,12 @@ export class ProfesseurPage implements OnInit {
   }
 
   saveProf() {
-    console.log(this.professeur.value)
-  }
+    console.log(this.professeur.value);
+    this.professeurService.save(this.professeur.value).subscribe((res : any) => {
+      let prof= new Professeur();
+      this.listProfesseurs.push(prof);
+  });
+
+}
 
 }

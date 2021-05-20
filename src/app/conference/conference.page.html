@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>professeur</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <div id="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-md="6" offset-md="3">
+          <form [formGroup]="conference" (ngSubmit)="saveProf()">
+            <ion-item>
+              <ion-label>date</ion-label>
+              <ion-input type="date" formControlName="date" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>sujet</ion-label>
+              <ion-input type="text" formControlName="sujet" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>professeur</ion-label>
+              <ion-input type="text" formControlName="professeur_id" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>pays</ion-label>
+              <ion-input type="text" formControlName="pays" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>ville</ion-label>
+              <ion-input type="text" formControlName="ville" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>lieu</ion-label>
+              <ion-input type="email" formControlName="lieu" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Adresse</ion-label>
+              <ion-input type="text" formControlName="adresse"></ion-input>
+            </ion-item>
+           
+            <ion-button type="submit" color="primary"  [disabled]="!conference.valid" block>Add Todo</ion-button>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
+  </ion-content>
